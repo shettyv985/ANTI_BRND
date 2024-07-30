@@ -1,0 +1,852 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Changed to a more elegant font */
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4; /* Slightly adjusted background color */
+}
+
+main { overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+nav {
+    width: 100%;
+    height: 15vh; /* Slightly reduced height for a more compact look */
+    padding: 0 2%; /* Adjusted padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+
+}
+
+#nav-pt1 {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    font-size: 1.1rem;
+}
+
+#nav-pt1 h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#nav-pt1 h4:hover {
+    color: #000;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown ul {
+    width: 160px; /* Slightly wider for better readability */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 10px;
+}
+
+.dropdown ul li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    list-style: none;
+    border-radius: 5px;
+    color: #555; /* Slightly lighter text color */
+}
+
+.dropdown ul li:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.dropdown:hover ul {
+    display: block;
+}
+
+#nav-pt2 {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    justify-content: flex-end;
+}
+
+#logo {
+    height: 80px; /* Reduced height for a more balanced look */
+    width: 80px; /* Reduced width for consistency */
+    transition: transform 0.3s ease;
+}
+
+#logo:hover {
+    transform: scale(1.05); /* Slightly reduced scale effect */
+}
+
+#nav-pt2 button {
+    padding: 12px 24px; /* Adjusted padding for better proportions */
+    border-radius: 25px; /* Rounded corners */
+    border: none;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    font-weight: 600;
+    background-color: #333; /* Darker button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Consistent elegant font */
+}
+
+#nav-pt2 button:hover {
+    background-color: #555;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#content {
+    width: 100%;
+    height: 55%; /* Slightly increased height for better balance */
+    padding-top: 7%;
+    text-align: center;
+  
+}
+
+#content h5 {
+    background-color: #ffe4e1; /* Softer pink background */
+    padding: 12px 24px; /* Adjusted padding */
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Consistent elegant font */
+}
+
+#content h1 {
+    padding-top: 2%;
+    font-size: 2.8rem; /* Larger font size */
+    font-weight: 700; /* Bolder font weight */
+    color: #110202; /* Darker text color */
+}
+
+#content h2 {
+    padding-top: 1.5%;
+    font-size: 1.6rem; /* Slightly larger font size */
+    font-weight: 400;
+    margin-bottom: 1%;
+    color: #666; /* Softer text color */
+}
+
+#content button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem; /* Slightly larger font size */
+    font-weight: 600;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Consistent elegant font */
+}
+
+#content button:hover {
+    background-color: #444;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#bottom {
+    width: 150%;
+    height: 120%; /* Increased height for better visibility */
+    overflow: hidden;
+    margin-top: 5%;
+    position: relative;
+    padding: 20px 0;
+}
+
+#scroll-wrapper {
+    display: flex;
+    position: absolute;
+    width: 500%; /* Increased width for better scrolling effect */
+    animation: scroll 50s linear infinite; /* Adjusted speed for smoother scrolling */
+}
+
+#scroll-wrapper:hover {
+    animation-play-state: paused;
+}
+
+.elem {
+    display: inline-block;
+    height: 400px;
+    width: 400px; /* Increased width for better visibility */
+    margin: 50px 15px; /* Adjusted margin for better spacing */
+    border-radius: 12px; /* Softer border radius */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.elem:hover {
+    transform: scale(1.1); /* Slightly smaller scale effect on hover */
+}
+
+.elem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.elem .overlay-button {
+    position: absolute;
+    bottom: 20px; /* Adjusted position */
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 1.2rem;
+     /* Larger button icon */
+    color: #fff; /* White icon color for contrast */
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.elem:hover .overlay-button {
+    opacity: 1;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.863); 
+    /* Darker background on hover */
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+#page2{top: -26%;
+    height: 200%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    padding-top: 100px;
+}
+#page2 h1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 60px;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    background: -webkit-linear-gradient(#332525,#b11414);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box{
+    padding: 10px;
+    height: 320px;
+    width: 400px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    transition: all ease 0.5s;
+    overflow: hidden;
+    margin: 15px;
+    
+}
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box-bottom{
+    height: 40%;
+    width: 100%;
+    background:linear-gradient(transparent,rgba(0, 0, 0, 0.63)) ;
+    position: absolute;
+    bottom: -40%;
+    transition: all ease 0.5s;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.box-bottom i{
+    background-color: white;
+    padding: 8px 9px;
+    color: #000;
+    font-size: 19px;
+    font-weight: 600;
+    border-radius: 50%;
+}
+.box-bottom h5{
+    font-size: 18px;
+}
+.box:hover .box-bottom{
+    bottom: 0;
+}
+
+.box:hover{
+    box-shadow: 0px 2px 20px rgba(123, 123, 123, 0.498);
+}
+
+footer {width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 2px solid #000;
+ 
+}
+
+.footer-section {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-section img {
+    max-width: 100px;
+}
+
+.footer-section a {
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 5px 5px;
+}
+
+copyright {
+    font-size: 12px;
+}
+
+.btn {
+    background-color: #fff;
+    width: 50px; /* Adjusted width to match nav items */
+    height: 50px; /* Adjusted height to match nav items */
+    border-radius: 50%; /* Make button circular */
+    box-shadow: inset 0 8px 60px rgba(0,0,0, .1), inset 0 8px 8px rgba(0,0,0, .1), inset 0 -4px 4px rgba(0,0,0, .1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn__indicator {
+    background-color: #fff;
+    width: 30px; /* Adjusted width to fit inside the button */
+    height: 30px; /* Adjusted height to fit inside the button */
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 8px 40px rgba(0,0,0, .2);
+    transition: transform .3s ease;
+}
+
+.btn__icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__icon {
+    color: #000000;
+    font-size: 1.5rem; /* Adjusted font size to fit the button */
+}
+
+.btn__icon.animated {
+    animation: spin 0.5s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body.dark-mode {
+    background: linear-gradient(to left, #1a1a1a, #000000); 
+}
+body.dark-mode main{   
+    background: linear-gradient(to left, #1a1a1a, #000000);
+}
+body.dark-mode nav {
+    background: linear-gradient(to left, #1a1a1a, #000000); 
+}
+
+body.dark-mode #content {
+    background: linear-gradient(to left, #1a1a1a, #000000); 
+    color: #ffffff; /* Text color for dark mode */
+}
+
+
+body.dark-mode #page2 {
+    background: linear-gradient(to left, #1a1a1a, #000000); 
+    color: #ffffff; /* Text color for dark mode */
+}
+
+
+
+
+body.dark-mode footer {
+    border-top: 2px solid #ffffff;
+    background: linear-gradient(to left, #1a1a1a, #000000); 
+}
+
+body.dark-mode .footer-section a {
+    color: #ffffff;
+}
+
+body.dark-mode .social-icons a {
+    color: #ffffff;
+}
+
+body.dark-mode .copyright {
+    color: #cccccc;
+}
+
+body.dark-mode #content h1 {
+    color: #ffffff;
+}
+
+body.dark-mode #content h5 {
+    color: #332222;
+}
+
+
+body.dark-mode #nav-pt1 h4 {
+    color: #d1b5b5;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.8rem; /* Adjusted font size */
+    }
+
+    /* Navigation Adjustments */
+    nav {
+        height: auto; /* Auto height for vertical navigation */
+        padding: 10px 0; /* Adjusted padding for space */
+        flex-direction: column; /* Display items vertically */
+        align-items: center; /* Align items to the center */
+    }
+
+    #nav-pt1 {
+        padding: 3%;
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items evenly */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt1 h4 {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    #logo {
+        height: 60px; /* Reduced logo size for smaller screens */
+        width: 60px;
+        margin-bottom: 10px; /* Spacing below the logo */
+    }
+
+    #nav-pt2 {
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items evenly */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt2 button {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
+    /* Content Adjustments */
+    #content {
+        padding: 10%; /* Adjusted padding */
+        height: auto; /* Auto height for dynamic content */
+    }
+
+    #content h1,
+    #content h5 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content h2 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content button {
+        padding: 12px 24px; /* Adjusted button padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    /* Scroll Wrapper Adjustments */
+    #scroll-wrapper {
+        width: 1000%; /* Increased width for smaller screen scrolling */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        top: -80%;
+        height: 200%; /* Maintain the original height */
+        padding-top: 80px; /* Adjusted padding for smaller screens */
+    }
+
+    #page2 h1 {
+        font-size: 40px; /* Smaller font size for page heading */
+        margin-bottom: 30px; /* Reduced margin */
+    }
+
+    .box {
+        width: 90%; /* Adjusted width for better fit */
+        height: 250px; /* Medium size for the box */
+    }
+
+    .box img {
+        height: 100%; /* Ensures image fills container */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .box-bottom h5 {
+        font-size: 16px; /* Smaller font size */
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.8rem; /* Adjusted font size */
+    }
+
+    /* Navigation Adjustments */
+    nav {
+        height: auto; /* Auto height for vertical navigation */
+        padding: 10px 0; /* Adjusted padding for space */
+        flex-direction: column; /* Display items vertically */
+        align-items: center; /* Align items to the center */
+    }
+
+    #nav-pt1 {
+        padding: 3%;
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items evenly */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt1 h4 {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    #logo {
+        height: 60px; /* Reduced logo size for smaller screens */
+        width: 60px;
+        margin-bottom: 10px; /* Spacing below the logo */
+    }
+
+    #nav-pt2 {
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items evenly */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt2 button {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
+    /* Content Adjustments */
+    #content {
+        padding: 10%; /* Adjusted padding */
+        height: auto; /* Auto height for dynamic content */
+    }
+
+    #content h1,
+    #content h5 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content h2 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content button {
+        padding: 12px 24px; /* Adjusted button padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    /* Scroll Wrapper Adjustments */
+    #scroll-wrapper {
+        width: 1000%; /* Increased width for smaller screen scrolling */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        top: -60%;
+        height: 200%; /* Maintain the original height */
+        padding-top: 80px; /* Adjusted padding for smaller screens */
+    }
+
+    #page2 h1 {
+        font-size: 40px; /* Smaller font size for page heading */
+        margin-bottom: 30px; /* Reduced margin */
+    }
+
+    .box {
+        width: 90%; /* Adjusted width for better fit */
+        height: 250px; /* Medium size for the box */
+    }
+
+    .box img {
+        height: 100%; /* Ensures image fills container */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .box-bottom h5 {
+        font-size: 16px; /* Smaller font size */
+    }
+}
+
+
+@media screen and (max-width: 414px) {
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.8rem; /* Adjusted font size */
+    }
+
+    /* Navigation Adjustments */
+    nav {
+        height: auto; /* Auto height for vertical navigation */
+        padding: 10px 0; /* Adjusted padding for space */
+        flex-direction: column; /* Display items vertically */
+        align-items: center; /* Align items to the center */
+    }
+
+    #nav-pt1 {
+        padding: 3%;
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items evenly */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt1 h4 {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    #logo {
+        height: 60px; /* Reduced logo size for smaller screens */
+        width: 60px;
+        margin-bottom: 10px; /* Spacing below the logo */
+    }
+
+    #nav-pt2 {
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items evenly */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt2 button {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
+    /* Content Adjustments */
+    #content {
+        padding: 10%; /* Adjusted padding */
+        height: auto; /* Auto height for dynamic content */
+    }
+
+    #content h1,
+    #content h5 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content h2 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content button {
+        padding: 12px 24px; /* Adjusted button padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    /* Scroll Wrapper Adjustments */
+    #scroll-wrapper {
+        width: 1000%; /* Increased width for smaller screen scrolling */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        top: -60%;
+        height: 200%; /* Maintain the original height */
+        padding-top: 80px; /* Adjusted padding for smaller screens */
+    }
+
+    #page2 h1 {
+        font-size: 40px; /* Smaller font size for page heading */
+        margin-bottom: 30px; /* Reduced margin */
+    }
+
+    .box {
+        width: 90%; /* Adjusted width for better fit */
+        height: 250px; /* Medium size for the box */
+    }
+
+    .box img {
+        height: 100%; /* Ensures image fills container */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .box-bottom h5 {
+        font-size: 16px; /* Smaller font size */
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.7rem; /* Adjusted font size */
+    }
+
+    /* Navigation Adjustments */
+    nav {
+        height: auto; /* Auto height for vertical navigation */
+        padding: 10px 0; /* Adjusted padding for space */
+        flex-direction: column; /* Display items vertically */
+        align-items: center; /* Align items to the start */
+        
+    }
+
+    #nav-pt1 {padding: 3%;
+        width: 100%; /* Full width for vertical alignment */
+        justify-content:space-evenly;/* Align items to the start */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt1 h4 {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    #logo {
+        height: 60px; /* Reduced logo size for smaller screens */
+        width: 60px;
+        margin-bottom: 10px;
+         /* Spacing below the logo */
+    }
+
+    #nav-pt2 {
+        width: 100%; /* Full width for vertical alignment */
+        justify-content: space-evenly; /* Align items to the start */
+        gap: 10px; /* Gap between items */
+    }
+
+    #nav-pt2 button {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
+    /* Content Adjustments */
+    #content {
+        padding: 10%; /* Adjusted padding */
+        height: auto; /* Auto height for dynamic content */
+    }
+
+    #content h1, #content h5 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content h2 {
+        font-size: 1rem; /* Smaller font size */
+        padding: 5%;
+    }
+
+    #content button {
+        padding: 12px 24px; /* Adjusted button padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    /* Scroll Wrapper Adjustments */
+    #scroll-wrapper {
+        width: 1000%; /* Increased width for smaller screen scrolling */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {top: -40%;
+        height: 200%; /* Maintain the original height */
+        padding-top: 80px; /* Adjusted padding for smaller screens */
+    }
+
+    #page2 h1 {
+        font-size: 40px; /* Smaller font size for page heading */
+        margin-bottom: 30px; /* Reduced margin */
+    }
+
+    .box {
+        width: 90%; /* Adjusted width for better fit */
+        height: 250px; /* Medium size for the box */
+    }
+
+    .box img {
+        height: 100%; /* Ensures image fills container */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .box-bottom h5 {
+        font-size: 16px; /* Smaller font size */
+    }
+}

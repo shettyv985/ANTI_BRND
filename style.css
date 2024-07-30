@@ -1,0 +1,915 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    color: #333;
+    background-color: #ffffff;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-top: 1px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Navbar Styles */
+nav {
+    margin-top: 2%;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+}
+
+#logo {
+    height: 55px;
+    width: 55px;
+    transition: transform 0.3s ease;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+nav h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav h2:hover {
+    transform: scale(1.1); 
+}
+
+.btn {
+    background-color: #fff;
+    width: 50px; /* Adjusted width to match nav items */
+    height: 50px; /* Adjusted height to match nav items */
+    border-radius: 50%; /* Make button circular */
+    box-shadow: inset 0 8px 60px rgba(0,0,0, .1), inset 0 8px 8px rgba(0,0,0, .1), inset 0 -4px 4px rgba(0,0,0, .1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn__indicator {
+    background-color: #fff;
+    width: 30px; /* Adjusted width to fit inside the button */
+    height: 30px; /* Adjusted height to fit inside the button */
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 8px 40px rgba(0,0,0, .2);
+    transition: transform .3s ease;
+}
+
+.btn__icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__icon {
+    color: #000000;
+    font-size: 1.5rem; /* Adjusted font size to fit the button */
+}
+
+.btn__icon.animated {
+    animation: spin 0.5s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Section Styles */
+section {
+    height: 90%;
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+#content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#content video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3vw;
+    color: #fff;
+}
+
+#over1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2vw;
+}
+
+#over1 h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#over1 h1 .highlight {
+    transition: color 0.3s ease;
+}
+
+#over1 h1 .highlight:hover {
+    color: #000;
+}
+
+#over1 h2 {
+    width: 5vw;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#over2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #fff;
+    padding-top: 1vw;
+}
+
+#over2 h4 {
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+#over2 i {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#over2 i:hover {
+    transform: scale(1.2);
+    color: #000;
+}
+
+/* Scroll Div Styles */
+#scroll {
+    height: 30vh;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #f5f5f5, hsl(0, 0%, 100%)); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 1rem; 
+}
+
+#scroll::-webkit-scrollbar {
+    height: 10px;
+    background-color: transparent; 
+}
+
+#scroll::-webkit-scrollbar-thumb {
+    background-color: #1f1e38; 
+    border-radius: 10px;
+    border: 2px solid #f5f5f5; 
+}
+
+#scroll::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+}
+
+#scroll img {
+    height: 100%;
+    border-radius: 50%; 
+    object-fit: cover;
+    width: 15%;
+    margin: 0 1rem; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    border: 1px solid #ddd; 
+    background-color: #fff; 
+}
+
+#scroll img:hover {
+    transform: scale(1.1) rotate(2deg); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    background: linear-gradient(135deg, #000000, #2b0505);
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2vw;
+    height: 100%;
+    width: auto; 
+    display: inline-block; 
+}
+
+#alpha{
+    height: 10vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+#alpha h5{
+    font-size: 1.7vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+    border-bottom: 2px solid #000 ;
+}
+
+#alpha h6{
+    font-size: 0.7vw;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-style: italic;
+    padding: 0.7vw 0.7vw;
+ 
+}
+
+#alpha h6:hover{border-bottom: 2px solid #000 ;
+    transform: scale(1.2); 
+}
+
+#page2{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  2vw 5vw;
+}
+
+#page2-part1{
+    height: 100%;
+    width: 40%;
+    background-image: url("lft.jpg");
+    background-size: cover;
+
+}
+
+#page2-part2{ height: 100%;
+    width: 50%;}
+
+    #page2-part2 video{height: 100%;
+        width: 95%;}
+
+#marque{
+    width: 100%;
+    white-space:nowrap;
+overflow-x: hidden ;
+overflow-y: hidden;
+padding: 0.7vw;
+border-top: 2px solid black;
+border-bottom: 2px solid black ;
+}
+
+#marque h1{
+    display: inline-block;
+font-size: 2.5vw;
+font-weight: 900;
+letter-spacing: 2px;
+-webkit-text-stroke: 2px #000;
+color: transparent;
+margin-right: 15px;
+animation-name: move;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-duration: 4s; 
+}
+
+
+footer {width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 2px solid #000;
+ 
+}
+
+.footer-section {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-section img {
+    max-width: 100px;
+}
+
+.footer-section a {
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 5px 5px;
+}
+
+copyright {
+    font-size: 12px;
+}
+@keyframes move{
+    from{
+        transform: translateX(0) ;
+    }
+
+    to{
+        transform: translateX(-100%) ;
+    }
+}
+
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a1a, #000000); 
+}
+
+body.dark-mode nav {
+    background: linear-gradient(135deg, #1a1a1a, #000000); 
+}
+
+body.dark-mode h2, body.dark-mode h3, body.dark-mode h5, body.dark-mode h6, body.dark-mode p, body.dark-mode span, body.dark-mode a, body.dark-mode li, body.dark-mode label {
+    color: #ffffff;
+}
+
+body.dark-mode h1 {
+    color: #000;
+}
+
+body.dark-mode #scroll {
+    background: linear-gradient(135deg, #1a1a1a, #1a1a1a);
+}
+
+body.dark-mode #scroll::-webkit-scrollbar-thumb {
+    background-color: #ffffff; 
+    border: 2px solid #333; 
+}
+
+body.dark-mode #scroll::-webkit-scrollbar-track {
+    background-color: #333; 
+}
+
+body.dark-mode .container {
+    background: linear-gradient(135deg, #1a1a1a, #1a1a1a);
+}
+
+body.dark-mode #alpha {
+    background: linear-gradient(135deg, #1a1a1a, #000000); 
+    color: #ffffff; /* Text color for dark mode */
+}
+
+body.dark-mode #alpha h5 {
+    color: #ffffff; /* Changed color for heading */
+    border-bottom: 2px solid #ffffff; /* Changed border color */
+}
+
+body.dark-mode #alpha h6 {
+    color: #cccccc; /* Changed color for sub-headings */
+}
+
+body.dark-mode #page2 {
+    background: linear-gradient(135deg, #1a1a1a, #000000); 
+    color: #ffffff; /* Text color for dark mode */
+}
+
+
+body.dark-mode #page2-part2 video {
+    filter: brightness(0.8); /* Adjust video brightness for dark mode */
+}
+
+body.dark-mode #marque {
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    background: linear-gradient(135deg, #1a1a1a, #000000); 
+}
+
+body.dark-mode #marque h1 {
+    -webkit-text-stroke: 2px #eaeaea;
+}
+body.dark-mode footer {
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    background: linear-gradient(135deg, #1a1a1a, #000000); 
+}
+
+body.dark-mode .footer-section a {
+    color: #ffffff;
+}
+
+body.dark-mode .social-icons a {
+    color: #ffffff;
+}
+
+body.dark-mode .copyright {
+    color: #cccccc;
+}
+@media screen and (max-width: 768px){/* Navbar Adjustments */
+    nav {
+        flex-direction: column;
+        padding: 10px 10px; /* Further reduced padding */
+        height: auto; /* Adjust height based on content */
+        box-shadow: none; /* Remove shadow for a compact design */
+    }
+
+    nav h2 {
+        font-size: 0.9rem; /* Reduced font size for better fit */
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 35px; /* Reduced button width */
+        height: 35px; /* Reduced button height */
+        box-shadow: none; /* Remove shadow for compact design */
+    }
+
+    .btn__indicator {
+        width: 20px; /* Reduced indicator width */
+        height: 20px; /* Reduced indicator height */
+    }
+   
+    section{
+        height: 50%;
+    }
+    /* Video and Marquee Adjustments */
+    #content video {
+        width: 85%; /* Further shrink video width */
+        height: 45vh; /* Reduced video height */
+        object-fit: cover; /* Proper fit */
+   /* Space above marquee */
+        margin-left: 7.5%; /* Center video within container */
+    }
+
+    #overlay {
+        height: 50%;
+        width: 80%;
+        position: absolute;
+        top: 150px; /* Adjusted to cover video properly */
+        left: 10%;
+        background: rgba(0, 0, 0, 0); /* Changed to a slight overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3vw;
+        color: #fff;
+        z-index: 10; /* Ensure overlay is above the video */
+    }
+
+    #marque {
+        padding: 0.5vw; /* Reduced padding */
+        border-top: 1px solid black; /* Thinner border */
+        border-bottom: 1px solid black; /* Thinner border */
+    }
+
+    /* Alpha Section Adjustments */
+    #alpha {
+        height: auto; /* Adjust height to fit content */
+        overflow: hidden;
+        flex-wrap: wrap;
+        gap: 1vw;
+        margin-top: 1px; /* Move 1px below the scroll div */
+    }
+
+    #alpha h5 {
+        font-size: 2.5vw; /* Adjusted font size */
+    }
+
+    #alpha h6 {
+        font-size: 1.2vw; /* Adjusted font size */
+        padding: 0.5vw;
+    }
+
+    /* Scroll Div Adjustments */
+    #scroll {
+        height: 20vh; /* Reduced height for better fit */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        margin-bottom: 0; /* Remove margin at bottom */
+    }
+
+    #scroll img {
+        width: 20%; /* Further shrink image width */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 5px; /* Adjusted margin */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        flex-direction: column;
+        padding: 2vw; /* Reduced padding */
+    }
+
+    #page2-part1, #page2-part2 {
+       
+        width: 100%;
+        height: 100%; /* Further adjusted height */
+    }
+
+    #page2-part2 video {
+        padding: 2vw;
+        width: 100%;
+        height: 100%;  /* Maintain aspect ratio */
+    }
+
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.7rem; /* Adjusted font size */
+    }}
+@media screen and (max-width: 430px){/* Navbar Adjustments */
+    nav {
+        flex-direction: column;
+        padding: 10px 10px; /* Further reduced padding */
+        height: auto; /* Adjust height based on content */
+        box-shadow: none; /* Remove shadow for a compact design */
+    }
+
+    nav h2 {
+        font-size: 0.9rem; /* Reduced font size for better fit */
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 35px; /* Reduced button width */
+        height: 35px; /* Reduced button height */
+        box-shadow: none; /* Remove shadow for compact design */
+    }
+
+    .btn__indicator {
+        width: 20px; /* Reduced indicator width */
+        height: 20px; /* Reduced indicator height */
+    }
+   
+    section{
+        height: 50%;
+    }
+    /* Video and Marquee Adjustments */
+    #content video {
+        width: 85%; /* Further shrink video width */
+        height: 45vh; /* Reduced video height */
+        object-fit: cover; /* Proper fit */
+   /* Space above marquee */
+        margin-left: 7.5%; /* Center video within container */
+    }
+
+    #overlay {
+        height: 50%;
+        width: 80%;
+        position: absolute;
+        top: 150px; /* Adjusted to cover video properly */
+        left: 10%;
+        background: rgba(0, 0, 0, 0); /* Changed to a slight overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3vw;
+        color: #fff;
+        z-index: 10; /* Ensure overlay is above the video */
+    }
+
+    #marque {
+        padding: 0.5vw; /* Reduced padding */
+        border-top: 1px solid black; /* Thinner border */
+        border-bottom: 1px solid black; /* Thinner border */
+    }
+
+    /* Alpha Section Adjustments */
+    #alpha {
+        height: auto; /* Adjust height to fit content */
+        overflow: hidden;
+        flex-wrap: wrap;
+        gap: 1vw;
+        margin-top: 1px; /* Move 1px below the scroll div */
+    }
+
+    #alpha h5 {
+        font-size: 2.5vw; /* Adjusted font size */
+    }
+
+    #alpha h6 {
+        font-size: 1.2vw; /* Adjusted font size */
+        padding: 0.5vw;
+    }
+
+    /* Scroll Div Adjustments */
+    #scroll {
+        height: 20vh; /* Reduced height for better fit */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        margin-bottom: 0; /* Remove margin at bottom */
+    }
+
+    #scroll img {
+        width: 20%; /* Further shrink image width */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 5px; /* Adjusted margin */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        flex-direction: column;
+        padding: 2vw; /* Reduced padding */
+    }
+
+    #page2-part1, #page2-part2 {
+       
+        width: 100%;
+        height: 100%; /* Further adjusted height */
+    }
+
+    #page2-part2 video {
+        padding: 2vw;
+        width: 100%;
+        height: 100%;  /* Maintain aspect ratio */
+    }
+
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.7rem; /* Adjusted font size */
+    }}
+
+@media screen and (max-width: 414px)  {
+    /* Navbar Adjustments */
+    nav {
+        flex-direction: column;
+        padding: 10px 10px; /* Further reduced padding */
+        height: auto; /* Adjust height based on content */
+        box-shadow: none; /* Remove shadow for a compact design */
+    }
+
+    nav h2 {
+        font-size: 0.9rem; /* Reduced font size for better fit */
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 35px; /* Reduced button width */
+        height: 35px; /* Reduced button height */
+        box-shadow: none; /* Remove shadow for compact design */
+    }
+
+    .btn__indicator {
+        width: 20px; /* Reduced indicator width */
+        height: 20px; /* Reduced indicator height */
+    }
+   
+    section{
+        height: 50%;
+    }
+    /* Video and Marquee Adjustments */
+    #content video {
+        width: 85%; /* Further shrink video width */
+        height: 45vh; /* Reduced video height */
+        object-fit: cover; /* Proper fit */
+   /* Space above marquee */
+        margin-left: 7.5%; /* Center video within container */
+    }
+
+    #overlay {
+        height: 50%;
+        width: 80%;
+        position: absolute;
+        top: 150px; /* Adjusted to cover video properly */
+        left: 10%;
+        background: rgba(0, 0, 0, 0); /* Changed to a slight overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3vw;
+        color: #fff;
+        z-index: 10; /* Ensure overlay is above the video */
+    }
+
+    #marque {
+        padding: 0.5vw; /* Reduced padding */
+        border-top: 1px solid black; /* Thinner border */
+        border-bottom: 1px solid black; /* Thinner border */
+    }
+
+    /* Alpha Section Adjustments */
+    #alpha {
+        height: auto; /* Adjust height to fit content */
+        overflow: hidden;
+        flex-wrap: wrap;
+        gap: 1vw;
+        margin-top: 1px; /* Move 1px below the scroll div */
+    }
+
+    #alpha h5 {
+        font-size: 2.5vw; /* Adjusted font size */
+    }
+
+    #alpha h6 {
+        font-size: 1.2vw; /* Adjusted font size */
+        padding: 0.5vw;
+    }
+
+    /* Scroll Div Adjustments */
+    #scroll {
+        height: 20vh; /* Reduced height for better fit */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        margin-bottom: 0; /* Remove margin at bottom */
+    }
+
+    #scroll img {
+        width: 20%; /* Further shrink image width */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 5px; /* Adjusted margin */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        flex-direction: column;
+        padding: 2vw; /* Reduced padding */
+    }
+
+    #page2-part1, #page2-part2 {
+       
+        width: 100%;
+        height: 100%; /* Further adjusted height */
+    }
+
+    #page2-part2 video {
+        padding: 2vw;
+        width: 100%;
+        height: 100%;  /* Maintain aspect ratio */
+    }
+
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.7rem; /* Adjusted font size */
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+    /* Navbar Adjustments */
+    nav {
+        flex-direction: column;
+        padding: 10px 10px; /* Further reduced padding */
+        height: auto; /* Adjust height based on content */
+        box-shadow: none; /* Remove shadow for a compact design */
+    }
+
+    nav h2 {
+        font-size: 0.9rem; /* Reduced font size for better fit */
+        margin: 5px 0;
+    }
+
+    .btn {
+        width: 35px; /* Reduced button width */
+        height: 35px; /* Reduced button height */
+        box-shadow: none; /* Remove shadow for compact design */
+    }
+
+    .btn__indicator {
+        width: 20px; /* Reduced indicator width */
+        height: 20px; /* Reduced indicator height */
+    }
+   
+    section{
+        height: 50%;
+    }
+    /* Video and Marquee Adjustments */
+    #content video {
+        width: 85%; /* Further shrink video width */
+        height: 45vh; /* Reduced video height */
+        object-fit: cover; /* Proper fit */
+   /* Space above marquee */
+        margin-left: 7.5%; /* Center video within container */
+    }
+
+    #overlay {
+        height: 50%;
+        width: 80%;
+        position: absolute;
+        top: 150px; /* Adjusted to cover video properly */
+        left: 10%;
+        background: rgba(0, 0, 0, 0); /* Changed to a slight overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3vw;
+        color: #fff;
+        z-index: 10; /* Ensure overlay is above the video */
+    }
+
+    #marque {
+        padding: 0.5vw; /* Reduced padding */
+        border-top: 1px solid black; /* Thinner border */
+        border-bottom: 1px solid black; /* Thinner border */
+    }
+
+    /* Alpha Section Adjustments */
+    #alpha {
+        height: auto; /* Adjust height to fit content */
+        overflow: hidden;
+        flex-wrap: wrap;
+        gap: 1vw;
+        margin-top: 1px; /* Move 1px below the scroll div */
+    }
+
+    #alpha h5 {
+        font-size: 2.5vw; /* Adjusted font size */
+    }
+
+    #alpha h6 {
+        font-size: 1.2vw; /* Adjusted font size */
+        padding: 0.5vw;
+    }
+
+    /* Scroll Div Adjustments */
+    #scroll {
+        height: 20vh; /* Reduced height for better fit */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        margin-bottom: 0; /* Remove margin at bottom */
+    }
+
+    #scroll img {
+        width: 20%; /* Further shrink image width */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 5px; /* Adjusted margin */
+    }
+
+    /* Page 2 Adjustments */
+    #page2 {
+        flex-direction: column;
+        padding: 2vw; /* Reduced padding */
+    }
+
+    #page2-part1, #page2-part2 {
+       
+        width: 100%;
+        height: 100%; /* Further adjusted height */
+    }
+
+    #page2-part2 video {
+        padding: 2vw;
+        width: 100%;
+        height: 100%;  /* Maintain aspect ratio */
+    }
+
+    /* Footer Adjustments */
+    footer {
+        font-size: 0.7rem; /* Adjusted font size */
+    }
+}
+
