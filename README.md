@@ -30,7 +30,5 @@ Excited to share my latest web project—**ANTI-BRND**—a premium e-commerce pl
 
 ---
 
-This project was a deep dive into blending aesthetics with functionality, pushing the boundaries of modern web design. I’m thrilled with how ANTI-BRND turned out—offering a user experience that feels both luxurious and effortless. 
-
-If you’re into design, development, or just love a good shopping experience, check it out and let me know what you think! 🚀
+Check it out and let me know what you think! 🚀
 
